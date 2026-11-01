@@ -35,3 +35,8 @@ updates:
     groups:
       docker-compose-all:
         patterns: ["*"]
+    ignore:
+      # Pinned to postgres 17: a major upgrade needs a planned dump/restore
+      # for self-hosters' existing volumes.
+      - dependency-name: "postgres"
+        update-types: ["version-update:semver-major"]
