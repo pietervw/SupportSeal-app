@@ -26,7 +26,7 @@ without: until it is set, every page answers with an error and
 | -------- | ------------ |
 | `db`     | PostgreSQL 17 with a persistent volume |
 | `migrate`| One-shot `prisma migrate deploy` before the app boots |
-| `app`    | The Next.js standalone build on port 3000 (health: `/api/health`) |
+| `app`    | The Next.js standalone build on port 3000 (container health: `/api/health/live`, no DB; `/api/health` also checks the database) |
 
 Open `http://<host>:3000`. On a fresh install the root page redirects to
 `/register`; the first account becomes the Workspace Admin. Create that
